@@ -3,7 +3,7 @@ const userInput = document.querySelector('#user-input');
 const sendBtn = document.querySelector('#send-btn');
 
 const botResponses = {
-    'Czesc. W czym mogę pomóc?': /Czesc/i,
+    'Cześć. W czym mogę pomóc?': /Cześć/i,
     'Przepraszam, nie mam dostępu do aktualnego czasu.': /Która jest godzina?/i,
     'Nie ma za co. Miłego dnia': /Dziękuję/i
 };
@@ -59,7 +59,7 @@ function sendUserMessage() {
                     responseFound = true;
                 }
                 if (!responseFound) {
-                    addBotMessage('Wrong message');
+                    addBotMessage('Błędna wiadomość');
                 }
 
                 chatLog.scrollTop = chatLog.scrollHeight;
