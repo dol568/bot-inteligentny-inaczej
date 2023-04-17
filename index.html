@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BotInteligentnyInaczej</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="chat-log">
+            <div class="message message-bot">Cześć, jak tam zajęcia z JS?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Napisz wiadomość" />
+            <button id="send-btn">Wyślij</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .chat-log::-webkit-scrollbar {
+            width: 0 !important;
+        }
+
+        .chat-container {
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            width: 300px;
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .chat-log {
+            flex: 1;
+            margin-bottom: 10px;
+            overflow-y: auto;
+        }
+
+        .message {
+            padding: 5px 10px;
+            border-radius: 5px;
+            max-width: 80%;
+            margin-bottom: 10px;
+            clear: both;
+        }
+
+        .message-bot {
+            background-color: #e0e0e0;
+            float: left;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .message-user {
+            background-color: #4CAF50;
+            color: white;
+            float: right;
+            word-wrap: break-word;
+        }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+        }
+
+        #user-input {
+            flex: 1;
+            margin-right: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        #send-btn {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input,
+        button {
+            font-family: inherit;
+            font-size: inherit;
+        }
+    </style>
+</body>
+
+</html>
