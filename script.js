@@ -3,12 +3,12 @@ const userInput = document.querySelector('#user-input');
 const sendBtn = document.querySelector('#send-btn');
 
 const botResponses = {
-    'hello': /hello|hi|hey/i,
-    'how are you': /how are you|how are things/i,
-    'help': /help|support|problem|issue/i
+    'Czesc. W czym mogę pomóc?': /Czesc/i,
+    'Przepraszam, nie mam dostępu do aktualnego czasu.': /Która jest godzina?/i,
+    'Nie ma za co. Miłego dnia': /Dziękuję/i
 };
 
-const badWords = ['motyla noga', 'cholera', 'kurczę', 'głupek'];
+const badWords = ['motyla noga', 'kurczę', 'głupek'];
 
 function addBotMessage(message, isError = false) {
     const botMessage = document.createElement('div');
@@ -24,17 +24,18 @@ function sendUserMessage() {
     const userMessage = userInput.value;
     if (userMessage) {
         userInput.value = '';
-        const userMessageElement = document.createElement('div');
-        const hasBadWords = badWords.some(word => userMessage.toLowerCase().includes(word.toLowerCase()));
 
-        userMessageElement.innerText = userMessage;
-        userMessageElement.classList.add('message-user', 'message');
-        chatLog.appendChild(userMessageElement);
+        const hasBadWords = badWords.some(word => userMessage.toLowerCase().includes(word.toLowerCase()));
 
         if (hasBadWords) {
             addBotMessage('Proszę, nie używaj takich słów', true);
             alert('Wykryto wulgaryzmy w Twojej wiadomości. Proszę, nie używaj takich słów.');
         } else {
+            const userMessageElement = document.createElement('div');
+            userMessageElement.innerText = userMessage;
+            userMessageElement.classList.add('message-user', 'message');
+            chatLog.appendChild(userMessageElement);
+            
             setTimeout(() => {
                 let responseFound = false;
                 for (const [key, value] of Object.entries(botResponses)) {
