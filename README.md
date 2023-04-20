@@ -39,4 +39,5 @@ _A: Nie ma za co. Miłego dnia_
 ### Deployment
 ***
 
-_Aplikacja jest opublikowana w Internecie za pomocą Github Pages pod adresem https://dol568.github.io/bot-inteligentny-inaczej/. Link do repozytorium https://github.com/dol568/bot-inteligentny-inaczej.git._
+[Aplikacja](https://dol568.github.io/bot-inteligentny-inaczej/) jest opublikowana w Internecie za pomocą Github Pages.  
+[Link do repozytorium](https://github.com/dol568/bot-inteligentny-inaczej.git).

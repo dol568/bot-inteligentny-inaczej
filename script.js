@@ -3,9 +3,9 @@ const userInput = document.querySelector('#user-input');
 const sendBtn = document.querySelector('#send-btn');
 
 const botResponses = {
-    'Cześć. W czym mogę pomóc?': /Cześć/i,
-    'Przepraszam, nie mam dostępu do aktualnego czasu.': /Która jest godzina?/i,
-    'Nie ma za co. Miłego dnia': /Dziękuję/i
+    'Cześć. W czym mogę pomóc?': /Cze[śs][ćc]/i,
+    'Przepraszam, nie mam dostępu do aktualnego czasu.': /Kt[óo]ra jest godzina?/i,
+    'Nie ma za co. Miłego dnia': /Dzi[ęe]kuj[ęe]/i
 };
 
 const badWords = ['motyla noga', 'kurczę', 'głupek'];
@@ -35,7 +35,7 @@ function sendUserMessage() {
             userMessageElement.innerText = userMessage;
             userMessageElement.classList.add('message-user', 'message');
             chatLog.appendChild(userMessageElement);
-            
+
             setTimeout(() => {
                 let responseFound = false;
                 for (const [key, value] of Object.entries(botResponses)) {
